@@ -6,8 +6,7 @@ import json
 from visual_analysis_functions_3drec_new import visual_analysis
 
 # Connect to MongoDB
-MONGO_URI = "mongodb+srv://dora_user:wk9NmSQIPqgXNf8O@doracluster.se2tb.mongodb.net/ImagesDB?ssl=true&ssl_cert_reqs=CERT_NONE"  # Atlas MongoDB
-# MONGO_URI = "mongodb://xr4d_visuals_user:B6^M2qAe@xr4drama.iti.gr:27017/XR4D_Visual_Analysis_DB?replicaSet=rs"  # Local MongoDB
+MONGO_URI = "" #need credentials (contact author)
 client = pymongo.MongoClient(MONGO_URI)
 
 print("[INFO] ******* Visual analysis listener is ready!")
