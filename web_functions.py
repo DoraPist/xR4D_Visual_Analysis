@@ -8,9 +8,9 @@ import os
 class WebFunctions:
 
     # Credentials for http://xr4drama.iti.gr:5002/fileUpload/{}
-    USERNAME = "xr4d_user"
-    API_PASSWORD = "kJ01H_Pr16zVHR@q"
-    DOWLOAD_PASSWORD = "Lc74H_Pr13zHR@qV"    #"kJ01H_Pr16zVHR@q"
+    USERNAME = ""    # Need credentials (contact author)
+    API_PASSWORD = ""
+    DOWLOAD_PASSWORD = ""
 
     masks_url = "http://xr4drama.iti.gr:5002/fileUpload/masks"
     procImages_url = "http://xr4drama.iti.gr:5002/fileUpload/processed_images"
@@ -80,24 +80,6 @@ class WebFunctions:
         file = {'file': open(filename, 'rb')}
         return file
 
-
-
-    # @staticmethod
-    # def decode_file(file):
-    #     """
-    #      Method to decode downloaded image using base64 from file storage
-    #      :param file: encoded image file
-    #      :param save_path: path to save the downloaded image
-    #      :return: encoded image file
-    #      """
-    #     # convert bytes to ndarray
-    #     # image = base64.decodebytes(file)
-    #     print(file)
-    #     # Save image in file.
-    #     image_result = open("Downloads/" + "test25.jpg", 'wb')
-    #     image_result.write(file)
-    #     print("Image was saved in path: ", "Downloads/" + "test25.jpg")
-
     @staticmethod
     def download_from_url(url, path, filename):
         """
@@ -125,45 +107,3 @@ class WebFunctions:
                 print("Error downloading file!")
                 print("Response code:", r.status_code)
                 return False
-
-# url = "http://xr4drama.iti.gr:5003/simmo/video/cf798436-e82a-4af5-8de0-c6faeb8069cb"
-# url = "http://xr4drama.iti.gr:5003/simmo/twitter_post/1408037357379596290"
-# json_file = requests.get(url, auth=HTTPBasicAuth(WebFunctions.USERNAME, WebFunctions.API_PASSWORD))
-# print(json_file.content)
-
-# url = "http://xr4drama.iti.gr:5002/download/youtube/9678fe0f-7e9e-4ca4-95fb-854aa90b4966.mp4"
-# WebFunctions.download_from_url(url, "Downloads/9678fe0f-7e9e-4ca4-95fb-854aa90b4966.mp4")
-# video = requests.get(url, auth=HTTPBasicAuth(WebFunctions.USERNAME, WebFunctions.PASSWORD))
-# print(video)
-
-# url = "https://video.twimg.com/ext_tw_video/1408037303193309186/pu/vid/720x1280/ja75AyF87fzS0m2S.mp4?tag=12"
-# url = "https://www.youtube.com/watch?v=e0ps-8cbY4I"
-# # online_video = requests.get(url)
-# online_video = requests.get(url, allow_redirects=True,
-#                          auth=HTTPBasicAuth(WebFunctions.USERNAME, WebFunctions.DOWLOAD_PASSWORD))
-# print(online_video)
-#
-# if online_video.status_code == 200:
-#     open("Downloads/twitter_video2.mp4", 'wb').write(online_video.content)
-
-
-# # Test
-# # # Define an image object with the location.
-# filename = "Corfu2/Frames/frame_25.jpg"
-# #
-# # Save image
-# # Open the image in read-only format.
-# file = {'file': open(filename, 'rb')}
-#
-# # request url for mask
-# url = "http://xr4drama.iti.gr:5002/fileUpload/masks"
-# uploaded_file_url = WebFunctions.send_post(url, file, False)
-# # r = requests.post(url, files=file, auth=HTTPBasicAuth(USERNAME, PASSWORD))
-#
-# print(uploaded_file_url)
-# # print(r.content)
-#
-# r = WebFunctions.image_get(uploaded_file_url)
-# print(r)
-
-
