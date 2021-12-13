@@ -20,17 +20,16 @@ class MyEncoder(json.JSONEncoder):
 app = Flask(__name__)
 app.json_encoder = MyEncoder
 auth = HTTPBasicAuth()  # Basic authentication
-MONGO_URI = "mongodb+srv://dora_user:wk9NmSQIPqgXNf8O@doracluster.se2tb.mongodb.net/ImagesDB?ssl=true&ssl_cert_reqs=CERT_NONE"  # Atlas MongoDB
-# MONGO_URI = "mongodb://xr4d_visuals_user:B6^M2qAe@xr4drama.iti.gr:27017/XR4D_Visual_Analysis_DB"  # Local MongoDB
+MONGO_URI = "" #need credentials (contact author)
 
 # Connect to MongoDB
 db = MongoClient(MONGO_URI) #, ssl_cert_reqs=ssl.CERT_NONE)
 print("[INFO] Successfully connected to MongoDB!")
 
 # Define usernames and passwords for access in the api
-users = {
-    "xr4d_user": generate_password_hash("xr4d_pass")
-}
+# users = {
+    
+# }
 
 # The function below receives the username and password sent by the client.
 # If the credentials belong to a user, then the function should return the user object.
